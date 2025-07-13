@@ -45,7 +45,7 @@ def entrypoint(module: str, cmd_to_run: str, cmd_args: str):
         secrets = load_secrets()
         cmd_args = convert_sql_query(decode_and_unpickle(cmd_args))
         logging.info(
-            f"Running ops_module: '{module}' and method: '{cmd_to_run}' with params"
+            f"Running module: '{module}' and method: '{cmd_to_run}' with params"
             f" {cmd_args}"
         )
         cmd_args["secrets"] = secrets
