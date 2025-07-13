@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "src"
+version = "0.0.1"
+description = ""
+authors = []
+readme = "README.md"
+packages = []
+
+[tool.poetry.dependencies]
+python = "^3.11.1"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.11"
+responses = "^0.25.0"
+pytest = "^7.4.2"
+pytest-cov = "^4.1.0"
+pytest-mock = "^3.14.0"
+pre-commit = "^3.3.1"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.ruff]
+target-version = "py311"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+pythonpath = ["."]
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)"
+addopts = "--cov=src --cov-report=term-missing"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
